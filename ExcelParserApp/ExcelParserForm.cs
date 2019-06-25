@@ -53,6 +53,7 @@ namespace ExcelParserApp
                                     detail.PatientSurveyDetailId = Guid.NewGuid();
                                     detail.PatientName = dataTable.Rows[i][0].ToString();
                                     detail.MRN = dataTable.Rows[i][1].ToString();
+                                    detail.MRN = detail.MRN.TrimStart('0');
                                     detail.PatientAge = int.Parse(dataTable.Rows[i][2].ToString());
                                     detail.ProfessionalName = dataTable.Rows[i][3].ToString();
                                     detail.SurveyDate = DateTime.Parse(dataTable.Rows[i][4].ToString());
